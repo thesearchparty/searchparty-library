@@ -5,6 +5,6 @@ namespace SearchParty.FileProviders
 {
     public interface IReadOnlyFileProvider
     {
-        Task<Stream> GetReadStream(string filename);
+        Task<Stream> GetReadStreamAsync(string filename);
     }
 }

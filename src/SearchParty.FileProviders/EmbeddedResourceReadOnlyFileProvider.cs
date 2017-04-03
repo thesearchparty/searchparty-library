@@ -19,7 +19,7 @@ namespace SearchParty.FileProviders
         /// <summary>
         /// Gets a stream for the resource in the given assembly in the 'Resources' folder.
         /// </summary>
-        public Task<Stream> GetReadStream(string filename)
+        public Task<Stream> GetReadStreamAsync(string filename)
         {
             filename = CleanFileName(filename);
 

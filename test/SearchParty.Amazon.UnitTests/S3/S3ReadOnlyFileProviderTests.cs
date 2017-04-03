@@ -31,7 +31,7 @@ namespace SearchParty.Amazon.UnitTests.S3
                 .Returns(GetStream());
 
             //Act
-            var stream = await _sut.GetReadStream(filename);
+            var stream = await _sut.GetReadStreamAsync(filename);
 
             //Assert
             await _s3Client.Received().GetObjectStreamAsync(BucketName, filename, null);
@@ -43,7 +43,7 @@ namespace SearchParty.Amazon.UnitTests.S3
             _s3Client.GetObjectStreamAsync(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<IDictionary<string, object>>())
                 .Returns(Task.FromResult((Stream)null));
             
-            await Assert.ThrowsAsync<HttpRequestException>(async () => await _sut.GetReadStream("some file"));
+            await Assert.ThrowsAsync<HttpRequestException>(async () => await _sut.GetReadStreamAsync("some file"));
         }
 
         private static Task<Stream> GetStream()

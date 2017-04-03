@@ -29,7 +29,7 @@ namespace SearchParty.Amazon.S3
         /// use this stream without leaking the underlying resource, please
         /// wrap access to the stream within a using block.
         /// </summary>
-        public async Task<Stream> GetReadStream(string filename)
+        public async Task<Stream> GetReadStreamAsync(string filename)
         {
             var stream = await _s3Client.GetObjectStreamAsync(_bucketName, filename, null);
             if(stream == null || !stream.CanRead)

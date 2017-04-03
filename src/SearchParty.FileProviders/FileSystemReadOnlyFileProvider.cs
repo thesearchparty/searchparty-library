@@ -27,7 +27,7 @@ namespace SearchParty.FileProviders
             }
         }
 
-        public Task<Stream> GetReadStream(string filename)
+        public Task<Stream> GetReadStreamAsync(string filename)
         {
             if (string.IsNullOrEmpty(filename)) throw new ArgumentNullException(nameof(filename));
 
