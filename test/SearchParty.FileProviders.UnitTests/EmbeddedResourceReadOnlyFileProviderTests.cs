@@ -26,5 +26,21 @@ namespace SearchParty.FileProviders.UnitTests
         {
             await Assert.ThrowsAsync<MissingManifestResourceException>(async () => await _sut.GetReadStream("No resource here"));
         }
+
+        [Fact]
+        public async Task GetReadStream_ShouldAccessFilesInFolders_WithForwardSlash()
+        {
+            var stream = await _sut.GetReadStream("AnotherFolder/TestResourceFile.txt");
+
+            Assert.NotNull(stream);
+        }
+
+        [Fact]
+        public async Task GetReadStream_ShouldAccessFilesInFolders_WithBackSlash()
+        {
+            var stream = await _sut.GetReadStream("AnotherFolder\\TestResourceFile.txt");
+
+            Assert.NotNull(stream);
+        }
     }
 }

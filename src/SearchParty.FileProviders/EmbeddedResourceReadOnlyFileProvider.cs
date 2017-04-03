@@ -21,11 +21,20 @@ namespace SearchParty.FileProviders
         /// </summary>
         public Task<Stream> GetReadStream(string filename)
         {
+            filename = CleanFileName(filename);
+
             var assembly = Assembly.Load(new AssemblyName(_assemblyName));
             var stream = assembly.GetManifestResourceStream($"{_assemblyName}.{ResourceFolder}.{filename}");
             if (stream == null) throw new MissingManifestResourceException($"Resource '{filename}' not found in '{_assemblyName}.{ResourceFolder}'.");
 
             return Task.FromResult(stream);
+        }
+
+        private static string CleanFileName(string filename)
+        {
+            return filename
+                .Replace('/', '.')
+                .Replace('\\', '.');
         }
     }
 }
