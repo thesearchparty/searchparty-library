@@ -5,7 +5,7 @@
     <Authors>Luke Spice</Authors>
     <Company>Search Party</Company>
     <Description>Search Party file access wrappers</Description>
-    <Version>0.9.1</Version>
+    <Version>0.9.2</Version>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://bitbucket.org/thesearchparty/searchparty-library</PackageProjectUrl>
