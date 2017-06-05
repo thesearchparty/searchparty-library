@@ -18,7 +18,7 @@ namespace SearchParty.FileProviders.UnitTests
         [Fact]
         public void Constructor_Works_WithRelativePath()
         {
-            var path = String.Format("..{0}", System.IO.Path.PathSeparator);
+            var path = String.Format("..{0}", System.IO.Path.DirectorySeparatorChar);
             var sut = new FileSystemReadOnlyFileProvider(path);
 
             Assert.NotNull(sut);
