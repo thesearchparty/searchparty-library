@@ -1,0 +1,8 @@
+language: csharp
+mono: none
+dotnet: 2.0.3
+dist: trusty
+script:
+  - dotnet restore
+  - dotnet test test/SearchParty.Amazon.UnitTests/SearchParty.Amazon.UnitTests.csproj
+  - dotnet test test/SearchParty.FileProviders.UnitTests/SearchParty.FileProviders.UnitTests.csproj
