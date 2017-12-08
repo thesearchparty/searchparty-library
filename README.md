@@ -1,6 +1,7 @@
-# Search Party Library #
+# Search Party Library  [![Build Status](https://travis-ci.org/thesearchparty/searchparty-library.svg?branch=master)](https://travis-ci.org/thesearchparty/searchparty-library) #
 
 Search party shared utilities in .NET Standard
+
 
 ## Search Party Amazon
 
