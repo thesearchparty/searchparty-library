@@ -17,10 +17,8 @@ namespace SearchParty.FileProviders
         {
             if (string.IsNullOrWhiteSpace(root)) throw new ArgumentNullException(nameof(root));
 
-            if (!Path.IsPathRooted(root)) throw new ArgumentException("The path must be absolute.", nameof(root));
-            var fullRoot = Path.GetFullPath(root);
             // When we do matches in GetFullPath, we want to only match full directory names.
-            Root = EnsureTrailingSlash(fullRoot);
+            Root = EnsureTrailingSlash(root);
             if (!Directory.Exists(Root))
             {
                 throw new DirectoryNotFoundException(Root);
